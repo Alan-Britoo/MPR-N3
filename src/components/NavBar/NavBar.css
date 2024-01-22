@@ -1,0 +1,88 @@
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav img {
+  margin-bottom: 0;
+}
+
+
+.pl-8-input{
+  padding-left: 0;
+}
+.buscar {
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+  
+  background: white;
+
+}
+.buscar>svg{
+  color: #EB5757;
+}
+.buscar:hover{
+  background: #ff5a5f;
+  transform: scale(1.1);
+  color: white;
+}
+.buscar > svg:hover{
+  
+  color: white;
+}
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 1% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 95%;
+  height: 50%;
+  border-radius: 12px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.lupa >svg{
+  color: rgb(251, 253, 253);
+}
+.lupa:hover{
+  background: #EB5757;
+  transform: scale(1.1);
+  color: white;
+}
+.lupa {
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+  color: white;
+  background: #EB5757;
+
+}
+.lll:hover{
+  transform: scale(1.2);
+  transition: background 0.2s ease, transform 0.2s ease;
+  width: 100px;
+  cursor: pointer;
+}

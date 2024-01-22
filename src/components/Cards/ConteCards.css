@@ -1,0 +1,43 @@
+.tarjeta_section {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 3fr));
+  gap: 16px;
+}
+
+.superhost {
+  @apply text-sm font-bold text-black mr-4 border-2 bg-transparent rounded-3xl py-1 px-2 border-black ease-in duration-200;
+}
+
+.imagen_hover {
+  @apply hover:cursor-pointer;
+}
+
+.tu-contenedor-padre:hover .superhost {
+  background-color: #ff5a5f;
+  color: #ffffff;
+  border-color: #ff5a5f;
+}
+
+.tu-contenedor-padre{
+  height: 340px;
+}
+
+.radio {
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+div:hover img:hover {
+  transform: scale(1.02);
+}
+
+div img {
+  transition: transform 0.3s ease;
+}
+
+/* @media screen and (max-width: 640px) {
+  section {
+    margin-top: ;
+  }
+} */
