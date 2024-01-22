@@ -54,14 +54,17 @@ header nav img {
 
 .close {
   color: #aaa;
-  float: right;
+  position: absolute;
   font-size: 28px;
   font-weight: bold;
+  top: 5px;
+  right: 2%;
+  margin-bottom: 30px;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: rgb(162, 18, 18);
   text-decoration: none;
   cursor: pointer;
 }

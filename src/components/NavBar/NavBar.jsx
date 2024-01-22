@@ -61,7 +61,7 @@ const NavBar = ({
         >
           <input
             type="text"
-            className="url_input_1 border-none "
+            className="url_input_1 border-none w-[85px] "
             placeholder="Location "
             style={{
               width: "85px",
@@ -122,7 +122,11 @@ const NavBar = ({
       {showModal && (
         <div className="modal">
           <div className="modal-content">
-            <span className="close" onClick={handleCloseModal}>
+            <span className="close" onClick={() => {
+                  handleCloseModalM();
+                  handleCloseModalC();
+                  handleCloseModal();
+                }}>
               &times;
             </span>
             <div
@@ -173,6 +177,8 @@ const NavBar = ({
                 type="button"
                 onClick={() => {
                   handleSearch();
+                  handleCloseModalC();
+                  handleCloseModalM();
                 }}
                 className="black_btn border-none border lupa w-[8%] flex items-center bg-red-600 ;
                 "

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ConteCards from "./ConteCards";
 
-import Estatic from "../Cuerpo";
+import Estatic from "../Titulos";
 import NavBar from "../NavBar/NavBar";
 
 const Imagenes = () => {

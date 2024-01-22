@@ -1,5 +1,5 @@
 import React from "react";
-import "./cuerpo.css";
+
 
 const Estatic = () => {
   return (
