@@ -4,7 +4,7 @@ import ConteCards from "./ConteCards";
 import Estatic from "../Titulos";
 import NavBar from "../NavBar/NavBar";
 
-const Imagenes = () => {
+const RenderizarTodo = () => {
   const [data, setData] = useState([]);
   const [filteredCategories, setFilteredCategories] = useState([]);
   const [searchValue, setSearchValue] = useState("");
@@ -33,7 +33,7 @@ const Imagenes = () => {
 
   const search = () => {
     const filteredData = data.filter((imageData) =>{
-      const ci = imageData.city.toLowerCase().includes(searchValue.toLowerCase())
+      const ci = searchValue===''|| imageData.city.toString().toLowerCase().includes(searchValue.toLowerCase())
       const filterG = searchGValue===''||
       imageData.maxGuests.toString().includes(searchGValue.toLowerCase()) 
       return ci && filterG
@@ -47,7 +47,7 @@ const Imagenes = () => {
       <NavBar
         searchValue={searchValue}
         searchGValue={searchGValue}
-        setSearchValue={(e) => setSearchValue(e.target.value)}
+        setSearchValue={ setSearchValue}
         setSearchGValue={(e) => setSearchGValue(e.target.value)}
         search={search}
 
@@ -64,4 +64,4 @@ const Imagenes = () => {
   );
 };
 
-export default Imagenes;
+export default RenderizarTodo;

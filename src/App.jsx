@@ -1,12 +1,13 @@
 
 import "./App.css";
-import Imagenes from "./components/Cards/Cards";
+import RenderizarTodo from "./components/Cards/Cards";
+
 
 const App = () => {
   return (
     <main>
       <div className="app">
-        <Imagenes />
+        <RenderizarTodo />
       </div>
     </main>
   );

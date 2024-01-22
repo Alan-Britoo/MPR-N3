@@ -15,6 +15,7 @@ const NavBar = ({
   const [showModal, setShowModal] = useState(false);
   const [showModalM, setShowModalM] = useState(false);
   const [showModalC, setShowModalC] = useState(false);
+
   const inputCityRef = useRef(null);
   const inputGuestsRef = useRef(null);
 
@@ -46,6 +47,9 @@ const NavBar = ({
     search();
     handleCloseModal();
   };
+  const hcClick=(city)=>{
+    setSearchValue(city);
+  }
 
   return (
     <header className="w-full h-16 flex justify-center items-center  ">
@@ -87,6 +91,7 @@ const NavBar = ({
               borderRadius: "7px",
             }}
             value={searchGValue}
+            onChange={setSearchGValue} 
             onClick={handleOpenModal}
             ref={inputGuestsRef}
           />
@@ -104,15 +109,15 @@ const NavBar = ({
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M22 22l-5.2-5.2"
               ></path>
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M10 17a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"
               ></path>
             </svg>
@@ -122,11 +127,14 @@ const NavBar = ({
       {showModal && (
         <div className="modal">
           <div className="modal-content">
-            <span className="close" onClick={() => {
-                  handleCloseModalM();
-                  handleCloseModalC();
-                  handleCloseModal();
-                }}>
+            <span
+              className="close"
+              onClick={() => {
+                handleCloseModalM();
+                handleCloseModalC();
+                handleCloseModal();
+              }}
+            >
               &times;
             </span>
             <div
@@ -149,12 +157,12 @@ const NavBar = ({
                   handleCloseModalM();
                   handleOpenModalC();
                 }}
-                onChange={setSearchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
                 value={searchValue}
                 ref={inputCityRef}
               />
               <input
-                type="text"
+                type="number"
                 className="url_input border-none"
                 placeholder="Add guests"
                 style={{
@@ -172,13 +180,16 @@ const NavBar = ({
                 onChange={setSearchGValue}
                 value={searchGValue}
                 ref={inputGuestsRef}
+                
               />
+              
               <button
                 type="button"
                 onClick={() => {
                   handleSearch();
                   handleCloseModalC();
                   handleCloseModalM();
+                  console.log(searchGValue)
                 }}
                 className="black_btn border-none border lupa w-[8%] flex items-center bg-red-600 ;
                 "
@@ -199,42 +210,48 @@ const NavBar = ({
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M22 22l-5.2-5.2"
                   ></path>
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M10 17a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"
                   ></path>
                 </svg>
               </button>
             </div>
+            
             {showModalC &&
-              ciudades.map((city, e) => (
-                <ul
-                  className="pt-4 pl-3 "
-                  key={e}
-                  onClick={() => {
-                    setSearchValue(city);
-                  }}
-                  
-                >
-                  <li className="flex lll">
-                    <img src={loc} alt="" />
-                    {city}
-                  </li>
-                </ul>
-              ))}
+  ciudades.map((city, e) => (
+    <ul
+      className="pt-4 pl-3 "
+      key={e}
+     
+    >
+      <li className="flex lll"
+       onClick={() => 
+        hcClick(city)
+       }
+     
+
+      >
+        <img src={loc} alt="" />
+        {city}
+      </li>
+    </ul>
+  ))}
             {showModalM && <NavInteractive />}
           </div>
         </div>
       )}
+      
     </header>
   );
+  
 };
 
 export default NavBar;
